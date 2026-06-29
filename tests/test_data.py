@@ -42,7 +42,7 @@ class DataUniverseTests(unittest.TestCase):
 
     def test_resolve_custom_tickers(self):
         tickers = resolve_tickers(
-            tickers=[" msft ", "AAPL", "MSFT"],
+            tickers=[" msft ", "AAPL", "MSFT", "msft"],
             ticker_source="custom",
             cache_path="unused.csv",
             max_tickers=None,

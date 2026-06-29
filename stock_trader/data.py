@@ -23,7 +23,7 @@ def resolve_tickers(
 ) -> list[str]:
     """Resolve ticker universe from either explicit tickers or a source."""
     if tickers:
-        cleaned = sorted({t.strip().upper() for t in tickers if t and t.strip()})
+        cleaned = sorted({str(t).strip().upper() for t in tickers if t is not None and str(t).strip()})
         if not cleaned:
             raise ValueError("No valid custom tickers were provided.")
         return cleaned[:max_tickers] if max_tickers else cleaned
